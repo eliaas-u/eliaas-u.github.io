@@ -15,7 +15,8 @@
       b.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    if (targetId === 'tab-maps' && window.maps && Array.isArray(window.maps)) {
+    // updated to new Projects tab id
+    if (targetId === 'tab-projects' && window.maps && Array.isArray(window.maps)) {
       // allow DOM to settle before invalidating sizes
       setTimeout(() => {
         window.maps.forEach(obj => {
@@ -33,6 +34,6 @@
   });
 
   // initial activation (first button marked active in HTML)
-  const init = document.querySelector('.tab-btn.active')?.dataset.target || 'tab-overview';
+  const init = document.querySelector('.tab-btn.active')?.dataset.target || 'tab-about';
   activate(init);
 })();

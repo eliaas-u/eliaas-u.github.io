@@ -13,19 +13,35 @@
   <!-- Theme-Toggle (fixed) -->
   <button id="theme-toggle" aria-pressed="false" aria-label="Wechsel Licht/Dunkel">🌙</button>
 
+  <!-- Social bar (fixed) -->
+  <aside class="social-bar" aria-label="Soziale Netzwerke">
+    <a class="social-link" href="https://linkedin.example.com" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+      <!-- LinkedIn SVG -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h4.98V24H0V8zm7.5 0H12v2.2h.07c.56-1.06 1.94-2.2 3.99-2.2 4.27 0 5.06 2.81 5.06 6.47V24h-4.98v-7.3c0-1.74-.03-3.99-2.43-3.99-2.44 0-2.81 1.9-2.81 3.86V24H7.5V8z"/></svg>
+    </a>
+    <a class="social-link" href="https://instagram.example.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <!-- Instagram SVG -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.8.24 2.22.4.54.21.92.46 1.33.87.41.41.66.79.87 1.33.16.42.34 1.05.4 2.22.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.8-.4 2.22-.21.54-.46.92-.87 1.33-.41.41-.79.66-1.33.87-.42.16-1.05.34-2.22.4-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.8-.24-2.22-.4-.54-.21-.92-.46-1.33-.87-.41-.41-.66-.79-.87-1.33-.16-.42-.34-1.05-.4-2.22C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.8.4-2.22.21-.54.46-.92.87-1.33.41-.41.79-.66 1.33-.87.42-.16 1.05-.34 2.22-.4C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.12 0-3.48.012-4.7.068-1.02.05-1.57.23-1.93.38-.49.2-.84.44-1.21.81-.37.37-.61.72-.81 1.21-.15.36-.33.91-.38 1.93-.056 1.22-.068 1.58-.068 4.7s.012 3.48.068 4.7c.05 1.02.23 1.57.38 1.93.2.49.44.84.81 1.21.37.37.72.61 1.21.81.36.15.91.33 1.93.38 1.22.056 1.58.068 4.7.068s3.48-.012 4.7-.068c1.02-.05 1.57-.23 1.93-.38.49-.2.84-.44 1.21-.81.37-.37.61-.72.81-1.21.15-.36.33-.91.38-1.93.056-1.22.068-1.58.068-4.7s-.012-3.48-.068-4.7c-.05-1.02-.23-1.57-.38-1.93-.2-.49-.44-.84-.81-1.21-.37-.37-.72-.61-1.21-.81-.36-.15-.91-.33-1.93-.38-1.22-.056-1.58-.068-4.7-.068zM12 6.8a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4zm0 1.8a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm6.4-1.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+    </a>
+    <a class="social-link" href="mailto:hello@example.com" aria-label="Email" title="Email">
+      <!-- Mail SVG -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+    </a>
+  </aside>
+
   <!-- Tabs UI -->
   <nav class="tabs" aria-label="Hauptnavigation">
     <div class="tab-buttons" role="tablist" aria-label="Tabs">
-      <button class="tab-btn active" role="tab" aria-selected="true" data-target="tab-overview">Übersicht</button>
-      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-maps">Karten</button>
-      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-table">Tabelle</button>
+      <button class="tab-btn active" role="tab" aria-selected="true" data-target="tab-about">About</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-projects">Projects</button>
       <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-links">Links</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-news">News</button>
     </div>
   </nav>
 
   <main class="tab-content">
-    <!-- Tab 1: h1, p, img -->
-    <section id="tab-overview" class="tab-pane active" role="tabpanel" aria-hidden="false">
+    <!-- Tab: About (combines Übersicht + Tabelle) -->
+    <section id="tab-about" class="tab-pane active" role="tabpanel" aria-hidden="false">
       <h1>Willkommen auf meiner Webseite</h1>
       <p>Ich heiße Elias, 20 Jahre alt und komme urspünglich aus Hochheim.</p>
 
@@ -33,19 +49,7 @@
         <img src="Studium.jpg" alt="Ein Studiums-Bild" class="profile-image" width="300">
         <figcaption class="figure-caption">Studium an der Universität Mainz</figcaption>
       </figure>
-    </section>
 
-    <!-- Tab 2: maps -->
-    <section id="tab-maps" class="tab-pane" role="tabpanel" aria-hidden="true">
-      <section class="maps-container">
-        <div id="map1" class="map" aria-label="Karte Hochheim"></div>
-        <div id="map2" class="map" aria-label="Karte Mainz"></div>
-        <div id="map3" class="map" aria-label="Karte Universität Mainz"></div>
-      </section>
-    </section>
-
-    <!-- Tab 3: table -->
-    <section id="tab-table" class="tab-pane" role="tabpanel" aria-hidden="true">
       <table>
         <tr>
           <th>Jahr</th>
@@ -74,16 +78,30 @@
       </table>
     </section>
 
-    <!-- Tab 4: links -->
+    <!-- Tab: Projects (vormals Karten) -->
+    <section id="tab-projects" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <section class="maps-container">
+        <div id="map1" class="map" aria-label="Karte Hochheim"></div>
+        <div id="map2" class="map" aria-label="Karte Mainz"></div>
+        <div id="map3" class="map" aria-label="Karte Universität Mainz"></div>
+      </section>
+    </section>
+
+    <!-- Tab: Links -->
     <section id="tab-links" class="tab-pane" role="tabpanel" aria-hidden="true">
       <ul class="links-list">
         <li><a href="#" target="_blank" rel="noopener">Link 1</a></li>
         <li><a href="#" target="_blank" rel="noopener">Link 2</a></li>
         <li><a href="#" target="_blank" rel="noopener">Link 3</a></li>
-        <!-- Instagram placeholder: replace USERNAME with your handle -->
         <li><a href="https://instagram.com/USERNAME" target="_blank" rel="noopener noreferrer" title="Instagram">Instagram</a></li>
-        <!-- LinkedIn/other links can be added similarly -->
       </ul>
+    </section>
+
+    <!-- Tab: News -->
+    <section id="tab-news" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <div id="news-list" class="news-list" aria-live="polite">
+        <p>Lade News…</p>
+      </div>
     </section>
   </main>
 
@@ -91,6 +109,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="maps.js"></script>
   <script src="tabs.js"></script>
+  <script src="assets/news.js"></script>
   <script src="theme.js"></script>
 </body>
 </html>

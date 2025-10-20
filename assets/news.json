@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Forschungsprojekt zur Stadtentwicklung gestartet",
+    "date": "2025-10-10",
+    "image": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Ein neues interdisziplinäres Projekt untersucht nachhaltige Stadtentwicklung in der Rhein-Main-Region.",
+    "content": "Das Projekt verbindet Geoinformatik, Stadtplanung und Soziologie, um datengetriebene Empfehlungen zur nachhaltigen Nutzung städtischer Flächen zu erarbeiten."
+  },
+  {
+    "id": 2,
+    "title": "Vortrag: Open-Source Geodaten",
+    "date": "2025-09-22",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Gastvortrag an der Universität Mainz über Potenziale offener Geodaten.",
+    "content": "Der Vortrag zeigte Praxisbeispiele und einfache Workflows zum Einsatz von OpenStreetMap-Daten in studentischen Projekten."
+  },
+  {
+    "id": 3,
+    "title": "Workshop: Leaflet & Styling",
+    "date": "2025-08-15",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Praktischer Workshop zu Leaflet, Kartenstyling und interaktiven Pins.",
+    "content": "Teilnehmer lernten, wie man ansprechende Karten erstellt, Marker anpasst und Karten in Webseiten integriert."
+  },
+  {
+    "id": 4,
+    "title": "Publikation akzeptiert im Journal für Geodaten",
+    "date": "2025-10-15",
+    "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Unsere Paper zu urbanen Mobilitätsmustern wurde zur Publikation angenommen.",
+    "content": "Die Studie analysiert Mobilitätsdaten aus verschiedenen Quellen und liefert Empfehlungen für fahrscheinfreie Mikrotransit-Lösungen in Vorstädten."
+  },
+  {
+    "id": 5,
+    "title": "Feldarbeit in der Rhein-Main-Region abgeschlossen",
+    "date": "2025-07-30",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Datenaufnahme vor Ort: Interviews, Messungen und Kartenerhebung sind abgeschlossen.",
+    "content": "Das Team hat in mehreren Gemeinden Bodenproben und Verkehrsbeobachtungen durchgeführt. Die Rohdaten werden aktuell bereinigt und für die Analyse vorbereitet."
+  },
+  {
+    "id": 6,
+    "title": "Hackathon-Sieg: Nachhaltige Kartenvisualisierung",
+    "date": "2025-06-12",
+    "image": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
+    "excerpt": "Unser Team gewann den lokalen Hackathon mit einer interaktiven, barrierearmen Kartenansicht.",
+    "content": "Das Prototyp-Tool kombiniert kontextbasierte Farbskalen und vereinfachte UI-Elemente, um Karteninhalte für ein breiteres Publikum leichter zugänglich zu machen."
+  }
+]
