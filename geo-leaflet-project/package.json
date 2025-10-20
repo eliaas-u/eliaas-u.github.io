@@ -1,0 +1,20 @@
+{
+  "name": "geo-leaflet-project",
+  "version": "1.0.0",
+  "description": "A project to display maps using Leaflet.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "leaflet": "^1.7.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "leaflet",
+    "maps",
+    "geo"
+  ],
+  "author": "Elias",
+  "license": "ISC"
+}

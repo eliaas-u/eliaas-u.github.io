@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Willkommen auf meiner Webseite</h1>
+    <p>Ich heiße Elias, 20 Jahre alt und komme urspünglich aus Hochheim.</p>   
+
+    <table>
+        <tr>
+            <th>Jahr</th>
+            <th>Station</th>
+            <th>Ort</th>
+            <th>Stichwort</th>
+        </tr>
+        <tr>
+            <td>2011-2015</td>
+            <td>Grundschule</td>
+            <td>Hochheim</td>
+            <td>Grundlagen</td>
+        </tr>
+        <tr>
+            <td>2015-2023</td>
+            <td>Gymnasium</td>
+            <td>Mainz</td>
+            <td>Vertiefung</td>
+        </tr>
+        <tr>
+            <td>2023-heute</td>
+            <td>Universität</td>
+            <td>Mainz</td>
+            <td>Spezialisierung</td>
+        </tr>
+    </table>
+
+    <img src="Studium.jpg" alt="Ein Beispielbild" width="300">
+
+    <!-- Karten: drei Leaflet-Container -->
+    <section class="maps-container">
+        <div id="map1" class="map" aria-label="Karte Hochheim"></div>
+        <div id="map2" class="map" aria-label="Karte Mainz"></div>
+        <div id="map3" class="map" aria-label="Karte Universität Mainz"></div>
+    </section>
+
+    <!-- Leaflet JS und eigene Initialisierung -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="maps.js"></script>
+</body>
+</html>

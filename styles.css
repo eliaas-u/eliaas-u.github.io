@@ -1,0 +1,117 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --muted:#677085;
+  --accent1:#0ea5a4;
+  --accent2:#06b6d4;
+  --border:#e6edf3;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color:#1f2937;
+  margin:24px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:8px;
+  color:#0f172a;
+}
+
+p{
+  text-align:center;
+  color:var(--muted);
+  margin:0 0 18px 0;
+}
+
+/* Table styling */
+table{
+  width:100%;
+  max-width:920px;
+  margin:16px auto;
+  border-collapse:separate;
+  border-spacing:0;
+  background:var(--card);
+  border-radius:10px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+th, td{
+  padding:14px 18px;
+  text-align:left;
+  font-size:0.95rem;
+}
+
+th{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  font-size:0.8rem;
+}
+
+/* zebra rows and subtle separators */
+tbody tr:nth-child(even) td{
+  background:#fbfdff;
+}
+tbody tr td{
+  border-bottom:1px solid var(--border);
+}
+
+/* hover effect */
+tbody tr:hover td{
+  background:linear-gradient(90deg, rgba(6,182,212,0.03), rgba(14,165,164,0.02));
+  transition:background 150ms ease;
+}
+
+/* responsive */
+@media (max-width:640px){
+  th, td{padding:10px 12px; font-size:0.9rem;}
+  table{margin:12px;}
+}
+
+/* image tweaks */
+img{
+  display:block;
+  margin:18px auto;
+  border-radius:8px;
+  box-shadow:0 8px 20px rgba(2,6,23,0.06);
+  max-width:100%;
+  height:auto;
+}
+
+/* --- Karten-Layout (neu) --- */
+.maps-container{
+  max-width:920px;
+  margin:18px auto 40px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  align-items:start;
+}
+
+.map{
+  height:260px;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  border:1px solid var(--border);
+}
+
+/* responsive für Karten */
+@media (max-width:900px){
+  .maps-container{grid-template-columns:repeat(2,1fr);}
+  .map{height:220px;}
+}
+@media (max-width:600px){
+  .maps-container{grid-template-columns:1fr;}
+  .map{height:260px;}
+}
