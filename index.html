@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Webseite</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine Webseite</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <h1>Willkommen auf meiner Webseite</h1>
-    <p>Ich heiße Elias, 20 Jahre alt und komme urspünglich aus Hochheim.</p>   
 
-    <table>
-        <tr>
-            <th>Jahr</th>
-            <th>Station</th>
-            <th>Ort</th>
-            <th>Stichwort</th>
-        </tr>
-        <tr>
-            <td>2011-2015</td>
-            <td>Grundschule</td>
-            <td>Hochheim</td>
-            <td>Grundlagen</td>
-        </tr>
-        <tr>
-            <td>2015-2023</td>
-            <td>Gymnasium</td>
-            <td>Mainz</td>
-            <td>Vertiefung</td>
-        </tr>
-        <tr>
-            <td>2023-heute</td>
-            <td>Universität</td>
-            <td>Mainz</td>
-            <td>Spezialisierung</td>
-        </tr>
-    </table>
+  <!-- Theme-Toggle (fixed) -->
+  <button id="theme-toggle" aria-pressed="false" aria-label="Wechsel Licht/Dunkel">🌙</button>
 
-    <img src="Studium.jpg" alt="Ein Beispielbild" width="300">
+  <!-- Tabs UI -->
+  <nav class="tabs" aria-label="Hauptnavigation">
+    <div class="tab-buttons" role="tablist" aria-label="Tabs">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-target="tab-overview">Übersicht</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-maps">Karten</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-table">Tabelle</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-links">Links</button>
+    </div>
+  </nav>
 
-    <!-- Karten: drei Leaflet-Container -->
-    <section class="maps-container">
+  <main class="tab-content">
+    <!-- Tab 1: h1, p, img -->
+    <section id="tab-overview" class="tab-pane active" role="tabpanel" aria-hidden="false">
+      <h1>Willkommen auf meiner Webseite</h1>
+      <p>Ich heiße Elias, 20 Jahre alt und komme urspünglich aus Hochheim.</p>
+
+      <figure class="profile-figure">
+        <img src="Studium.jpg" alt="Ein Studiums-Bild" class="profile-image" width="300">
+        <figcaption class="figure-caption">Studium an der Universität Mainz</figcaption>
+      </figure>
+    </section>
+
+    <!-- Tab 2: maps -->
+    <section id="tab-maps" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <section class="maps-container">
         <div id="map1" class="map" aria-label="Karte Hochheim"></div>
         <div id="map2" class="map" aria-label="Karte Mainz"></div>
         <div id="map3" class="map" aria-label="Karte Universität Mainz"></div>
+      </section>
     </section>
 
-    <!-- Leaflet JS und eigene Initialisierung -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="maps.js"></script>
+    <!-- Tab 3: table -->
+    <section id="tab-table" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <table>
+        <tr>
+          <th>Jahr</th>
+          <th>Station</th>
+          <th>Ort</th>
+          <th>Stichwort</th>
+        </tr>
+        <tr>
+          <td>2011-2015</td>
+          <td>Grundschule</td>
+          <td>Hochheim</td>
+          <td>Grundlagen</td>
+        </tr>
+        <tr>
+          <td>2015-2023</td>
+          <td>Gymnasium</td>
+          <td>Mainz</td>
+          <td>Vertiefung</td>
+        </tr>
+        <tr>
+          <td>2023-heute</td>
+          <td>Universität</td>
+          <td>Mainz</td>
+          <td>Spezialisierung</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Tab 4: links -->
+    <section id="tab-links" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <ul class="links-list">
+        <li><a href="#" target="_blank" rel="noopener">Link 1</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Link 2</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Link 3</a></li>
+        <!-- Instagram placeholder: replace USERNAME with your handle -->
+        <li><a href="https://instagram.com/USERNAME" target="_blank" rel="noopener noreferrer" title="Instagram">Instagram</a></li>
+        <!-- LinkedIn/other links can be added similarly -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Leaflet JS und eigene Initialisierung -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="maps.js"></script>
+  <script src="tabs.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>

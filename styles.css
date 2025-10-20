@@ -1,117 +1,248 @@
-:root{
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --muted:#677085;
-  --accent1:#0ea5a4;
-  --accent2:#06b6d4;
-  --border:#e6edf3;
+/* Theme variables */
+:root {
+  --bg: #ffffff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #0b74de;
+  --card: #f8fafc;
+  --map-border: #e5e7eb;
+  --shadow: 0 6px 18px rgba(15,23,36,0.06);
+  --radius: 10px;
 }
 
-*{box-sizing:border-box}
-body{
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+/* Party-green variables (Bündnis 90/Die Grünen inspired) */
+:root {
+  --party-green: #78BE20;
+  --party-green-dark: #5fa416;
+  --party-green-soft: rgba(120,190,32,0.06);
+}
+
+html[data-theme="dark"] {
+  --bg: #06111a;
+  --text: #e6eef6;
+  --muted: #94a3b8;
+  --accent: #61a9ff;
+  --card: #07121a;
+  --map-border: #102027;
+  --shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background: var(--bg);
-  color:#1f2937;
-  margin:24px;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background .2s ease, color .2s ease;
+  line-height: 1.45;
 }
 
-h1{
-  text-align:center;
-  margin-bottom:8px;
-  color:#0f172a;
+/* Container */
+body {
+  max-width: 980px;
+  margin: 36px auto;
+  padding: 20px;
 }
 
-p{
-  text-align:center;
-  color:var(--muted);
-  margin:0 0 18px 0;
+/* Heading / text */
+h1 {
+  font-size: 1.8rem;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+p {
+  margin: 12px 0 18px 0;
+  color: var(--muted);
+  text-align: center;
 }
 
-/* Table styling */
-table{
-  width:100%;
-  max-width:920px;
-  margin:16px auto;
-  border-collapse:separate;
-  border-spacing:0;
-  background:var(--card);
-  border-radius:10px;
-  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
-  overflow:hidden;
-  border:1px solid var(--border);
+/* Figure + caption for the Studium image */
+.profile-figure {
+  margin: 12px auto;
+  text-align: center;
+  max-width: 640px;
+}
+.profile-image {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--map-border);
+  max-width: 100%;
+  height: auto;
+}
+.figure-caption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
-th, td{
-  padding:14px 18px;
-  text-align:left;
-  font-size:0.95rem;
+/* Table (updated to green theme) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 20px 0;
+  background: transparent;
+  box-shadow: 0 8px 20px rgba(15,23,36,0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
-th{
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  color:#fff;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.6px;
-  font-size:0.8rem;
+/* header cells — use table th so it matches your markup (no <thead> needed) */
+table th {
+  background: linear-gradient(180deg, var(--party-green), var(--party-green-dark));
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
 }
 
-/* zebra rows and subtle separators */
-tbody tr:nth-child(even) td{
-  background:#fbfdff;
-}
-tbody tr td{
-  border-bottom:1px solid var(--border);
-}
-
-/* hover effect */
-tbody tr:hover td{
-  background:linear-gradient(90deg, rgba(6,182,212,0.03), rgba(14,165,164,0.02));
-  transition:background 150ms ease;
+/* body cells */
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  color: var(--text);
 }
 
-/* responsive */
-@media (max-width:640px){
-  th, td{padding:10px 12px; font-size:0.9rem;}
-  table{margin:12px;}
+tbody tr:nth-child(even) td {
+  background: var(--party-green-soft);
 }
 
-/* image tweaks */
-img{
-  display:block;
-  margin:18px auto;
-  border-radius:8px;
-  box-shadow:0 8px 20px rgba(2,6,23,0.06);
-  max-width:100%;
-  height:auto;
+/* dark theme variants */
+html[data-theme="dark"] table th {
+  background: linear-gradient(180deg, var(--party-green-dark), #427d10);
+}
+html[data-theme="dark"] tbody tr:nth-child(even) td {
+  background: rgba(97,164,22,0.06);
+}
+html[data-theme="dark"] th, html[data-theme="dark"] td {
+  border-bottom-color: rgba(255,255,255,0.03);
+}
+img {
+  display: block;
+  margin: 12px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 100%;
+  height: auto;
+}
+img[src="Studium.jpg"],
+img[alt="Ein Studiums-Bild"] {
+  display: block;
+  margin: 12px auto;
 }
 
-/* --- Karten-Layout (neu) --- */
-.maps-container{
-  max-width:920px;
-  margin:18px auto 40px;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:14px;
-  align-items:start;
+/* Maps container */
+.maps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
 }
 
-.map{
-  height:260px;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
-  border:1px solid var(--border);
+/* Each map */
+.map {
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius);
+  border: 1px solid var(--map-border);
+  background: var(--card);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-/* responsive für Karten */
-@media (max-width:900px){
-  .maps-container{grid-template-columns:repeat(2,1fr);}
-  .map{height:220px;}
+/* Make sure Leaflet controls are above our button */
+.leaflet-control-container { z-index: 5000; }
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 99999;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--map-border);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.06);
+  transition: transform .08s ease, background .12s ease, color .12s ease;
 }
-@media (max-width:600px){
-  .maps-container{grid-template-columns:1fr;}
-  .map{height:260px;}
+#theme-toggle:hover { transform: translateY(-1px); }
+#theme-toggle:active { transform: scale(.98); }
+
+/* Tabs styling */
+.tabs {
+  max-width: 980px;
+  margin: 8px auto 18px auto;
+  padding: 0 10px;
+}
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--map-border);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .12s ease, transform .08s ease;
+}
+.tab-btn:hover { transform: translateY(-2px); }
+.tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(11,116,222,0.12);
+}
+
+/* Panes */
+.tab-content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 12px 28px 12px;
+}
+.tab-pane { display: none; opacity: 0; transform: translateY(6px); transition: opacity .18s, transform .18s; }
+.tab-pane.active { display: block; opacity: 1; transform: translateY(0); }
+
+/* Links list */
+.links-list { list-style: none; padding: 0; margin: 8px 0; text-align: center; }
+.links-list li { margin: 6px 0; }
+.links-list a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+}
+.links-list a:hover { border-bottom-color: var(--accent); }
+
+/* Small screens adjustments */
+@media (max-width: 520px) {
+  body { padding: 12px; margin: 18px; }
+  h1 { font-size: 1.4rem; }
+  .map { height: 240px; }
+}
+
+/* Accessibility: focus styles */
+:focus {
+  outline: 3px solid rgba(11,116,222,0.16);
+  outline-offset: 2px;
 }
