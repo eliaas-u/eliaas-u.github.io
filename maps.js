@@ -40,11 +40,16 @@
     });
   }
 
-  // Map configurations and labels
+  // Map configurations and labels (centers updated)
   const mapConfigs = [
-    { id: 'map1', center: [50.002, 8.381], zoom: 13, title: 'Hochheim' },
-    { id: 'map2', center: [50.000, 8.270], zoom: 13, title: 'Mainz' },
-    { id: 'map3', center: [49.996, 8.247], zoom: 15, title: 'Universität Mainz' }
+    // Kelweg, 65239 Hochheim (Hochheim am Main) - updated coordinates
+    { id: 'map1', center: [50.016736, 8.349479], zoom: 13, title: 'Hochheim am Main — Kelweg 65239' },
+
+    // Mainz (central)
+    { id: 'map2', center: [50.0000, 8.2700], zoom: 13, title: 'Mainz' },
+
+    // Lucie-Hildebrand-Straße 2, 55128 Mainz (University of Applied Sciences Mainz) - updated position
+    { id: 'map3', center: [49.9889018, 8.2266451], zoom: 15, title: 'University of Applied Sciences Mainz — Lucie-Hildebrand-Straße 2' }
   ];
 
   // Determine initial theme

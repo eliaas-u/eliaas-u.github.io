@@ -1,7 +1,7 @@
-// Simple tab controller: show/hide panes, update aria, notify maps to resize when shown.
-(function () {
-  const buttons = document.querySelectorAll('.tab-btn');
-  const panes = document.querySelectorAll('.tab-pane');
+// Robust tab controller — waits for DOM and ensures activation works
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panes = Array.from(document.querySelectorAll('.tab-pane'));
 
   function activate(targetId) {
     panes.forEach(p => {
@@ -15,9 +15,7 @@
       b.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    // updated to new Projects tab id
     if (targetId === 'tab-projects' && window.maps && Array.isArray(window.maps)) {
-      // allow DOM to settle before invalidating sizes
       setTimeout(() => {
         window.maps.forEach(obj => {
           try { obj.map.invalidateSize(); } catch (e) { /* ignore */ }
@@ -33,7 +31,6 @@
     });
   });
 
-  // initial activation (first button marked active in HTML)
   const init = document.querySelector('.tab-btn.active')?.dataset.target || 'tab-about';
   activate(init);
-})();
+});
