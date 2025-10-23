@@ -27,6 +27,18 @@ html[data-theme="dark"] {
   --shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
+/* Topbar variables */
+:root {
+  --topbar-height: 72px;
+  --topbar-gradient: linear-gradient(90deg, var(--party-green), var(--accent));
+}
+
+/* dark theme: override topbar gradient */
+html[data-theme="dark"] {
+  /* ...existing dark variables... */
+  --topbar-gradient: linear-gradient(90deg, rgba(21,78,28,0.95), rgba(8,43,60,0.95));
+}
+
 /* Base */
 * { box-sizing: border-box; }
 html,body {
@@ -51,8 +63,6 @@ body {
 }
 
 /* Topbar: colorful tabs area fixed to top */
-:root { --topbar-height: 72px; }
-
 .topbar {
   position: fixed;
   top: 0;
@@ -63,7 +73,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 100000;
-  background: linear-gradient(90deg, var(--party-green), var(--accent));
+  background: var(--topbar-gradient);
   box-shadow: 0 6px 18px rgba(2,6,23,0.12);
   padding: 8px 12px;
 }
