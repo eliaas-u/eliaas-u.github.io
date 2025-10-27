@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_98d927b402256b9bc158f95f3c9f74d4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_98d927b402256b9bc158f95f3c9f74d4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_98d927b402256b9bc158f95f3c9f74d4 = L.map(
+                "map_98d927b402256b9bc158f95f3c9f74d4",
+                {
+                    center: [40.0, 45.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5c4241fae7c83d5ac1e8063b0b0a000b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5c4241fae7c83d5ac1e8063b0b0a000b.addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var tile_layer_62794b4244a16b18ca5df58a59e09b3e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_62794b4244a16b18ca5df58a59e09b3e.addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var marker_8ec7c7eb39f4a865ee98acda21c6ae81 = L.marker(
+                [60.1699, 24.9384],
+                {
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var icon_f704f46c499fc1b90e1a25dc565c5b5d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b82ab3bf1a031555b510f93d1cc3bc3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef95966f6a3e876839e8bbefb241698d = $(`<div id="html_ef95966f6a3e876839e8bbefb241698d" style="width: 100.0%; height: 100.0%;"><b>Helsinki, Finland</b><br>Capital of Finland</div>`)[0];
+                popup_b82ab3bf1a031555b510f93d1cc3bc3b.setContent(html_ef95966f6a3e876839e8bbefb241698d);
+            
+        
+
+        marker_8ec7c7eb39f4a865ee98acda21c6ae81.bindPopup(popup_b82ab3bf1a031555b510f93d1cc3bc3b)
+        ;
+
+        
+    
+    
+            marker_8ec7c7eb39f4a865ee98acda21c6ae81.bindTooltip(
+                `<div>
+                     Helsinki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8ec7c7eb39f4a865ee98acda21c6ae81.setIcon(icon_f704f46c499fc1b90e1a25dc565c5b5d);
+            
+    
+            var marker_4546dcd9793a2c8c61a038d9db04ccaa = L.marker(
+                [59.437, 24.7536],
+                {
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var icon_ace7849679d38b12eb7763196d60fbf7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_179e65f7aaf5e769b409bf94bb72a467 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfc0314bf64d274c2cdfd2dcdfb6725c = $(`<div id="html_dfc0314bf64d274c2cdfd2dcdfb6725c" style="width: 100.0%; height: 100.0%;"><b>Tallinn, Estonia</b><br>Capital of Estonia</div>`)[0];
+                popup_179e65f7aaf5e769b409bf94bb72a467.setContent(html_dfc0314bf64d274c2cdfd2dcdfb6725c);
+            
+        
+
+        marker_4546dcd9793a2c8c61a038d9db04ccaa.bindPopup(popup_179e65f7aaf5e769b409bf94bb72a467)
+        ;
+
+        
+    
+    
+            marker_4546dcd9793a2c8c61a038d9db04ccaa.bindTooltip(
+                `<div>
+                     Tallinn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4546dcd9793a2c8c61a038d9db04ccaa.setIcon(icon_ace7849679d38b12eb7763196d60fbf7);
+            
+    
+            var marker_bb3195060c2fc2e02468094140a25f4c = L.marker(
+                [56.9496, 24.1052],
+                {
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var icon_cc43b6a833998c7794b91a18511c3626 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f5e129ee10500da9dcc91091ecb929d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de86400cd3513c299701cf51f0972505 = $(`<div id="html_de86400cd3513c299701cf51f0972505" style="width: 100.0%; height: 100.0%;"><b>Riga, Latvia</b><br>Capital of Latvia</div>`)[0];
+                popup_0f5e129ee10500da9dcc91091ecb929d.setContent(html_de86400cd3513c299701cf51f0972505);
+            
+        
+
+        marker_bb3195060c2fc2e02468094140a25f4c.bindPopup(popup_0f5e129ee10500da9dcc91091ecb929d)
+        ;
+
+        
+    
+    
+            marker_bb3195060c2fc2e02468094140a25f4c.bindTooltip(
+                `<div>
+                     Riga
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bb3195060c2fc2e02468094140a25f4c.setIcon(icon_cc43b6a833998c7794b91a18511c3626);
+            
+    
+            var marker_ef3b86d9179cfae54acd99a350621f1e = L.marker(
+                [54.8985, 23.9036],
+                {
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var icon_08ca928d95271f425a6fdce532aeb5e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b62c8b172990d56e78f69d89aaf5268 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c22da794273ab652e214eb3d9a159333 = $(`<div id="html_c22da794273ab652e214eb3d9a159333" style="width: 100.0%; height: 100.0%;"><b>Kaunas, Lithuania</b><br>Second largest city in Lithuania</div>`)[0];
+                popup_0b62c8b172990d56e78f69d89aaf5268.setContent(html_c22da794273ab652e214eb3d9a159333);
+            
+        
+
+        marker_ef3b86d9179cfae54acd99a350621f1e.bindPopup(popup_0b62c8b172990d56e78f69d89aaf5268)
+        ;
+
+        
+    
+    
+            marker_ef3b86d9179cfae54acd99a350621f1e.bindTooltip(
+                `<div>
+                     Kaunas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef3b86d9179cfae54acd99a350621f1e.setIcon(icon_08ca928d95271f425a6fdce532aeb5e7);
+            
+    
+            var marker_9c47072627b4cf58aeb73ea802f0d0d7 = L.marker(
+                [52.2297, 21.0122],
+                {
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            var icon_eb47c46da24f4d921f2d7e555ae684e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8dfb8ac88534540fcfbbc61719f2c7b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a875f37cb15b6fc85eab42da6c82c194 = $(`<div id="html_a875f37cb15b6fc85eab42da6c82c194" style="width: 100.0%; height: 100.0%;"><b>Warsaw, Poland</b><br>Capital of Poland</div>`)[0];
+                popup_b8dfb8ac88534540fcfbbc61719f2c7b.setContent(html_a875f37cb15b6fc85eab42da6c82c194);
+            
+        
+
+        marker_9c47072627b4cf58aeb73ea802f0d0d7.bindPopup(popup_b8dfb8ac88534540fcfbbc61719f2c7b)
+        ;
+
+        
+    
+    
+            marker_9c47072627b4cf58aeb73ea802f0d0d7.bindTooltip(
+                `<div>
+                     Warsaw
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c47072627b4cf58aeb73ea802f0d0d7.setIcon(icon_eb47c46da24f4d921f2d7e555ae684e5);
+            
+    
+            map_98d927b402256b9bc158f95f3c9f74d4.fitBounds(
+                [[60.1699, 24.9384], [59.437, 24.7536], [56.9496, 24.1052], [54.8985, 23.9036], [52.2297, 21.0122]],
+                {"padding": [20, 20]}
+            );
+        
+    
+            var layer_control_ea9418e8e496a649a640cfd787877ca8_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_5c4241fae7c83d5ac1e8063b0b0a000b,
+                    "Carto Light" : tile_layer_62794b4244a16b18ca5df58a59e09b3e,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_ea9418e8e496a649a640cfd787877ca8 = L.control.layers(
+                layer_control_ea9418e8e496a649a640cfd787877ca8_layers.base_layers,
+                layer_control_ea9418e8e496a649a640cfd787877ca8_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+
+        
+    
+            tile_layer_5c4241fae7c83d5ac1e8063b0b0a000b.addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+            tile_layer_62794b4244a16b18ca5df58a59e09b3e.addTo(map_98d927b402256b9bc158f95f3c9f74d4);
+        
+    
+                marker_8ec7c7eb39f4a865ee98acda21c6ae81.setIcon(icon_f704f46c499fc1b90e1a25dc565c5b5d);
+            
+    
+                marker_4546dcd9793a2c8c61a038d9db04ccaa.setIcon(icon_ace7849679d38b12eb7763196d60fbf7);
+            
+    
+                marker_bb3195060c2fc2e02468094140a25f4c.setIcon(icon_cc43b6a833998c7794b91a18511c3626);
+            
+    
+                marker_ef3b86d9179cfae54acd99a350621f1e.setIcon(icon_08ca928d95271f425a6fdce532aeb5e7);
+            
+    
+                marker_9c47072627b4cf58aeb73ea802f0d0d7.setIcon(icon_eb47c46da24f4d921f2d7e555ae684e5);
+            
+</script>
+</html>

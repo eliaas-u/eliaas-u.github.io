@@ -547,4 +547,104 @@ html[data-theme="dark"] .social-link:hover {
   margin-top: 10px;
 }
 
-/* keep news captions unaffected (news uses its own layout) */
+/* Embedded map iframe styling */
+.map-embed-wrap {
+  max-width: 980px;
+  margin: 12px auto 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--map-border);
+  background: var(--card);
+}
+.map-iframe {
+  width: 100%;
+  height: 640px;
+  border: 0;
+  display: block;
+}
+
+/* smaller height on narrow screens */
+@media (max-width: 760px) {
+  .map-iframe { height: 420px; }
+}
+@media (max-width: 420px) {
+  .map-iframe { height: 320px; }
+}
+
+/* Maps section heading */
+.maps-section {
+  max-width: 980px;
+  margin: 8px auto 14px;
+  text-align: center;
+}
+.maps-heading {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--party-green), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+.maps-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* grid for multiple embedded maps: two columns on medium+ screens */
+.map-embed-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default: one column */
+  gap: 14px;
+  max-width: 980px;
+  margin: 6px auto 28px;
+}
+
+/* two columns at >= 760px */
+@media (min-width: 760px) {
+  .map-embed-grid {
+    grid-template-columns: repeat(2, 1fr); /* two maps next to each other */
+  }
+}
+
+/* make 3D iframe span full width on wide screens if desired */
+/* Uncomment if you want the 3D viewer to span both columns by default:
+@media (min-width: 1100px) {
+  .map-embed-card:nth-last-child(2) { grid-column: 1 / -1; }
+}
+*/
+
+.map-embed-card {
+  background: var(--card);
+  border: 1px solid var(--map-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.map-embed-caption {
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+.map-iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+/* smaller iframe heights on narrow screens */
+@media (max-width: 760px) {
+  .map-iframe { height: 320px; }
+}
+@media (max-width: 420px) {
+  .map-iframe { height: 240px; }
+}

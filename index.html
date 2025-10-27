@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Elias</title>
+  <!-- use About image as favicon -->
+  <link rel="icon" href="Studium.jpg" type="image/jpeg">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -20,7 +22,7 @@
           <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-projects">Projects</button>
           <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-links">Links</button>
           <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-news">News</button>
-          <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-qa">Q&amp;A</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="tab-map">Maps/Animation</button>
         </div>
       </nav>
 
@@ -110,6 +112,53 @@
         <li><a href="https://instagram.example.com" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="mailto:hello@example.com">hello@example.com</a></li>
       </ul>
+    </section>
+
+    <!-- Map tab: embeds the local map files from the "map" folder + assets earthquake map -->
+    <section id="tab-map" class="tab-pane" role="tabpanel" aria-hidden="true">
+      <div class="maps-section">
+        <h2 class="maps-heading">Interaktive Karten</h2>
+        <p class="maps-subtitle">Eine Auswahl von Projekten — 2D- und 3D-Visualisierungen.</p>
+      </div>
+
+      <div class="map-embed-grid">
+        <div class="map-embed-card">
+          <iframe src="map/map_1_basiskarte.html" class="map-iframe" title="Map 1 — Basiskarte" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">Basiskarte (map_1_basiskarte.html)</div>
+        </div>
+
+        <div class="map-embed-card">
+          <iframe src="map/map_2_punkte.html" class="map-iframe" title="Map — Punkte" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">Punktekarte (map_2_punkte.html)</div>
+        </div>
+
+        <div class="map-embed-card">
+          <iframe src="map/map_3_reiseroute.html" class="map-iframe" title="Map — Reiseroute" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">Reiseroute (map_3_reiseroute.html)</div>
+        </div>
+
+        <div class="map-embed-card">
+          <iframe src="map/map_4_flaechen_online.html" class="map-iframe" title="Map — Flächen" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">Flächen (map_4_flaechen_online.html)</div>
+        </div>
+
+        <div class="map-embed-card">
+          <iframe src="map/map_3d.html" class="map-iframe" title="Map — 3D LoD2 (Cesium)" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">3D-Visualisierung (map_3d.html)</div>
+        </div>
+
+        <!-- new: local asset in assets/ -->
+        <div class="map-embed-card">
+          <iframe src="assets/californiaearthquake.html" class="map-iframe" title="California Earthquakes" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">California Earthquakes (assets/californiaearthquake.html)</div>
+        </div>
+
+        <!-- new: walk animation -->
+        <div class="map-embed-card">
+          <iframe src="assets/walk.html" class="map-iframe" title="Walk Animation" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div class="map-embed-caption">Walk Animation (assets/walk.html)</div>
+        </div>
+      </div>
     </section>
 
     <!-- News tab -->

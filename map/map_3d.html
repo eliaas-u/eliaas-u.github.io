@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D LoD2 Gebaeude — Cesium Viewer</title>
+
+  <!-- Cesium -->
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Cesium.js"></script>
+
+  <style>
+    html, body, #cesiumContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    .info {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 2;
+      background: rgba(255,255,255,0.9);
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      max-width: 360px;
+      line-height: 1.25;
+    }
+  </style>
+</head>
+<body>
+  <div class="info">
+    <strong>3D-Viewer — LoD2 Gebäude & Terrain</strong>
+    <div style="margin-top:6px;font-size:12px;color:#333;">
+      Nutzung: basemap.de 3D (LoD2), Terrain (DGM5). Quellen und Lizenz in der Beschreibung.
+    </div>
+  </div>
+
+  <div id="cesiumContainer"></div>
+
+  <script>
+    (function () {
+      // optional: Cesium.Ion.defaultAccessToken = 'YOUR_TOKEN_HERE';
+
+      if (typeof Cesium === 'undefined') {
+        document.body.innerHTML = '<p style="color:#fff;padding:16px">Cesium not loaded.</p>';
+        return;
+      }
+
+      // Initialize viewer
+      const viewer = new Cesium.Viewer('cesiumContainer', {
+        shadows: false,
+        geocoder: false,
+        baseLayerPicker: false,
+        timeline: false,
+        animation: false,
+        infoBox: true
+      });
+
+      // OpenStreetMap base for areas outside Germany
+      const osm = new Cesium.OpenStreetMapImageryProvider({
+        url: 'https://a.tile.openstreetmap.org/',
+        credit: new Cesium.Credit('<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>', true)
+      });
+      viewer.imageryLayers.addImageryProvider(osm);
+
+      // WMS basemapde as additional imagery layer (may be slow)
+      const provider = new Cesium.WebMapServiceImageryProvider({
+        url: 'https://sgx.geodatenzentrum.de/wms_basemapde',
+        layers: 'de_basemapde_web_raster_farbe',
+        parameters: {
+          transparent: true,
+          format: 'image/png'
+        }
+      });
+      viewer.imageryLayers.addImageryProvider(provider);
+
+      // Camera initial view (example coordinates)
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(8.24, 50.00, 3500.0),
+        orientation: {
+          heading: Cesium.Math.toRadians(0.0),
+          pitch: Cesium.Math.toRadians(-45.0),
+          roll: 0.0
+        },
+        duration: 2.5
+      });
+
+      // tileset URLs (LoD2) - provided by basemap.de 3D (example URLs)
+      const tilesetUrls = [
+        'https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4978_null.json',
+        // 'https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4978_dgm5.json',
+        // 'https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_3857_null.json'
+      ];
+
+      async function loadTilesets() {
+        for (const url of tilesetUrls) {
+          try {
+            const tileset = await Cesium.Cesium3DTileset.fromUrl(url);
+            viewer.scene.primitives.add(tileset);
+
+            // simple style: roofs red, walls light gray, bridges dark
+            const cityStyle = new Cesium.Cesium3DTileStyle({
+              color: {
+                conditions: [
+                  ["${surface} === 'roof'", "color('#ff5c4d')"],
+                  ["${surface} === 'wall'", "color('#f2f2f2')"],
+                  ["${surface} === 'bridge'", "color('#999999')"],
+                  ["true", "color('#cccccc')"]
+                ]
+              }
+            });
+            tileset.style = cityStyle;
+
+          } catch (err) {
+            // don't break if one tileset fails
+            // log to console of iframe
+            // eslint-disable-next-line no-console
+            console.error('Error loading tileset', url, err);
+          }
+        }
+      }
+
+      loadTilesets();
+    })();
+  </script>
+</body>
+</html>
